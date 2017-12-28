@@ -18,11 +18,34 @@ package 蓝桥杯.基础练习;
 */
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Demo10 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        long temp = sc.nextLong();
+        int temp = sc.nextInt();
+        f(temp);
+        
+    }
+
+    private static void f(int temp) {   //将十进制转换成十六进制
+        Stack<Character> stack = new Stack<>();
+        char[] arr = {'0','1','2','3','4','5','6','7','8','9',
+                'A','B','C','D','E','F'};
+        /*
+        *   十进制整数转十六进制数：“除以16取余，逆序排列”（除十六取余法）
+        */
+
+        do {
+            int ii = temp % 16;
+            char cc = arr[ii];
+            stack.push(cc);
+            temp = temp / 16;
+        } while(temp != 0);
+
+        while(!stack.isEmpty()) {
+            System.out.print(stack.pop());
+        }
 
     }
 }
