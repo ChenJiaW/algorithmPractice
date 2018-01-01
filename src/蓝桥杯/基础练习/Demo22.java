@@ -20,5 +20,23 @@ package 蓝桥杯.基础练习;
 */
 
 
+import java.util.Scanner;
+
 public class Demo22 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        String[] letter = {"A","B","C","D","E","F","G","H","I","J","K","L","M","N",
+                "O","P","Q","R","S","T","U","V","W","X","Y","Z"};
+        String text = "A";
+        //这道题的规律就是第n道等于第n-1道+字母+第n-1道
+        for(int i = 0; i < N; i++) {
+            if(i != 0) {
+                String temp = text + letter[i] + text;
+                text = temp;
+            }
+        }
+
+        System.out.println(text);
+    }
 }

@@ -12,8 +12,8 @@ package 蓝桥杯.基础练习;
         13:thirteen, 14:fourteen, 15:fifteen, 16:sixteen,
         17:seventeen, 18:eighteen, 19:nineteen, 20:twenty。
     　　30读作thirty，40读作forty，50读作fifty。
-    　　对于大于20小于60的数字，首先读整十的数，然后再加上个位数。如31首先读30再
-        加1的读法，读作“thirty one”。
+    　　对于大于20小于60的数字，首先读整十的数，然后再加上个位数。
+        如31首先读30再加1的读法，读作“thirty one”。
     　　按上面的规则21:54读作“twenty one fifty four”，9:07读作“nine seven”，
         0:15读作“zero fifteen”。
     输入格式
@@ -27,5 +27,35 @@ package 蓝桥杯.基础练习;
 */
 
 
+import java.util.Scanner;
+
 public class Demo26 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int h = sc.nextInt();  //时
+        int m = sc.nextInt();  //分
+        //零到二十的英文写法
+        String[] arr1 = {"zero","one","two","three","four",
+                "five","six","seven","eight","nine","ten",
+                "eleven","twelve","thirteen","fourteen","fifteen",
+                "sixteen","seventeen","eighteen","nineteen","twenty"};
+        //十位的英文写法
+        String[] arr2 = {"zero","ten","twenty","thirty","forty","fifty"};
+
+        if(m == 0)
+            System.out.println(transToEn(h,arr1,arr2) + " o'clock");
+        else
+            System.out.print(transToEn(h,arr1,arr2) + " " + transToEn(m,arr1,arr2));
+    }
+
+    //将一个数字转换成英文读法
+    private static String transToEn(int temp,String[] arr1,String[] arr2) {
+        if(temp <= 20)
+            return arr1[temp];
+        else {
+            int ge = temp % 10;  //个位
+            int shi = (temp / 10) % 10;  //十位
+            return arr2[shi] + " " + arr1[ge];
+        }
+    }
 }

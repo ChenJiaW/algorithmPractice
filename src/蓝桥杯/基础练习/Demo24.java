@@ -38,6 +38,43 @@ package 蓝桥杯.基础练习;
 */
 
 
+import java.util.Scanner;
+
 public class Demo24 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int v1 = sc.nextInt();  //兔子的速度
+        int v2 = sc.nextInt();  //乌龟的速度
+        int t = sc.nextInt();   //兔子休息的距离
+        int s = sc.nextInt();   //兔子的休息时间
+        int l = sc.nextInt();   //赛道长度
+
+
+        int time = 0;  //赛跑时间
+        int sleep = 0; //兔子睡觉次数
+        while(true) {
+            //当兔子的距离超过赛道长度，而乌龟的距离小于赛道长度，则兔子胜出
+            if((time - sleep * s) * v1 >= l && time * v2 < l) {
+                System.out.println("R");
+                System.out.println(time);
+                break;
+                //当乌龟的距离超过赛道长度，而兔子的距离小于赛道长度，则乌龟胜出
+            } else if(time * v2 >= l && (time - sleep * s) * v1 < l) {
+                System.out.println("T");
+                System.out.println(time);
+                break;
+                //当两者都超过终点，则平局
+            } else if(time * v2 >= l && (time - sleep * s) * v1 >= l) {
+                System.out.println("D");
+                System.out.println(time);
+                break;
+            }
+            //当兔子领先乌龟t米，则兔子睡觉
+            if(t <= (time - sleep * s) * v1 - time * v2)
+                sleep++;
+            //时间增加
+            time++;
+        }
+    }
 }
 
