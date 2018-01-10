@@ -27,5 +27,14 @@ package 蓝桥杯.基础练习;
 */
 
 
+import java.util.Scanner;
+
 public class Demo29 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[] arrA = new int[100];
+        int[] arrB = new int[100];
+        int[] arrC = new int[100];
+
+    }
 }

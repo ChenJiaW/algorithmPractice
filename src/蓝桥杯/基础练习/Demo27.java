@@ -31,4 +31,7 @@ package 蓝桥杯.基础练习;
 
 
 public class Demo27 {
+    public static void main(String[] args) {
+
+    }
 }
