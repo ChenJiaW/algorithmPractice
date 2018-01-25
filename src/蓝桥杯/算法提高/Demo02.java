@@ -24,7 +24,7 @@ package 蓝桥杯.算法提高;
 
 
 public class Demo02 {
-    public static void main(String[] aegs) {
+    public static void main(String[] args) {
 
     }
 }

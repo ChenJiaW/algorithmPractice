@@ -1,4 +1,4 @@
-package Node算法练习.基础题;
+package 基础题;
 
 /*
         给出2个整数A和B，计算两个数的和。

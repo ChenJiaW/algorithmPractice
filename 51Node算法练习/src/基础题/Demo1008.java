@@ -1,4 +1,4 @@
-package Node算法练习.基础题;
+package 基础题;
 
 /*
         输入N和P（P为质数），求N! Mod P = ? (Mod 就是求模 %)
